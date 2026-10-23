@@ -9,14 +9,7 @@ Violentmonkey 为浏览器提供用户脚本支持。
 
 更多详情请见[这里](https://violentmonkey.github.io/)。
 
-加入我们的 Discord 服务器：
-
-[![Discord](https://img.shields.io/discord/995346102003965952?label=discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/XHtUNSm6Xc)
-
 ## 提供给测试者的自动构建
-
-* [CI workflows](https://github.com/violentmonkey/violentmonkey/actions/workflows/ci.yml)（仅限已登录 github.com 的用户）
-* [nightly.link latest](https://nightly.link/violentmonkey/violentmonkey/workflows/ci/master?preview)（如需下载其他构建，可将制品 URL 中的 `github.com` 替换为 `nightly.link`）
 
 在 beta 版本之间的变更会自动生成测试构建。你可以将其作为未打包扩展安装到 Chrome 和其他 Chromium 内核浏览器中，或在 Firefox 中作为临时扩展安装。
 
