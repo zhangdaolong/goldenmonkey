@@ -52,7 +52,3 @@ $ pnpm build:selfHosted
 
 发布流程请参见 [RELEASE](RELEASE.md)。
 
-## 相关项目
-
-- [Violentmonkey for Opera Presto](https://github.com/violentmonkey/violentmonkey-oex)
-- [Violentmonkey for Maxthon](https://github.com/violentmonkey/violentmonkey-mx)
