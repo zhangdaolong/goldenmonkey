@@ -7,7 +7,6 @@
 Violentmonkey 为浏览器提供用户脚本支持。
 它可运行在支持 [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) 的浏览器上。
 
-更多详情请见[这里](https://violentmonkey.github.io/)。
 
 ## 提供给测试者的自动构建
 
