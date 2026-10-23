@@ -1,8 +1,8 @@
-# Release
+# 发布
 
-Create a tag and push, GitHub Actions will build the assets and upload them to different stores.
+创建标签并推送后，GitHub Actions 会构建资源文件，并将其上传到不同的存储平台。
 
-## Prerelease
+## 预发布
 
 ```bash
 $ git checkout master
@@ -10,9 +10,9 @@ $ pnpm bump
 $ git push origin master --follow-tags
 ```
 
-## Release
+## 正式发布
 
-Merge everything that is ready to release to the `release` branch and bump version.
+将所有已准备好发布的内容合并到 `release` 分支，并更新版本号。
 
 ```bash
 $ git checkout release
@@ -21,7 +21,7 @@ $ pnpm version minor
 $ git push origin release --follow-tags
 ```
 
-Finally merge `release` back to `master`.
+最后，将 `release` 分支合并回 `master`。
 
 ```bash
 $ git checkout master
