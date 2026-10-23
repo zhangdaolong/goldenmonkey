@@ -138,7 +138,7 @@ jobs:
   publish-cws:
     name: Publish to Chrome Web Store
     needs: build
-    if: ${{ github.event_name != 'workflow_dispatch' || !inputs.dryRun }}
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -163,10 +163,6 @@ jobs:
           REFRESH_TOKEN: ${{ secrets.CWS_REFRESH_TOKEN }}
         run: |
           set -x
-          if [ -z "$PUBLISHER_ID" ] || [ -z "$CLIENT_ID" ] || [ -z "$CLIENT_SECRET" ] || [ -z "$REFRESH_TOKEN" ]; then
-            echo "::warning::CWS credentials are not configured, skipping CWS publish"
-            exit 0
-          fi
           if [ "$PRERELEASE" != "true" ]; then
             echo Publish release
             CWS_SOURCE=$ASSETS_DIR/$ASSET_CWS_ZIP
