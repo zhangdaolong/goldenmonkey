@@ -29,11 +29,11 @@ const envs = {
 
 envs.CWS_EXT_ID = envs.PRERELEASE ? CWS_EXT_ID_BETA : CWS_EXT_ID_RELEASE;
 envs.SOURCE_ZIP = `${envs.RELEASE_PREFIX}-${envs.VERSION}-source.zip`;
-envs.ASSET_ZIP = `${envs.RELEASE_PREFIX}-webext-v${envs.VERSION}.zip`;
-envs.ASSET_CWS_ZIP = `${envs.RELEASE_PREFIX}-mv3-v${envs.VERSION}.zip`;
-envs.ASSET_CWS_BETA_ZIP = `${envs.RELEASE_PREFIX}-mv3-beta-v${envs.VERSION}.zip`;
+envs.ASSET_ZIP = `topwar-assistant-v${envs.VERSION}.zip`;
+envs.ASSET_CWS_ZIP = `topwar-assistant-v${envs.VERSION}-mv3.zip`;
+envs.ASSET_CWS_BETA_ZIP = `topwar-assistant-v${envs.VERSION}-mv3-beta.zip`;
 envs.ASSET_SELF_HOSTED_ZIP = `${envs.RELEASE_PREFIX}-webext-ffself-v${envs.VERSION}.zip`;
-envs.ASSET_CRX = `${envs.RELEASE_PREFIX}-mv2-v${envs.VERSION}.crx`;
+envs.ASSET_CRX = `topwar-assistant-v${envs.VERSION}.crx`;
 
 Object.entries(envs).forEach(([key, value]) => {
   core.exportVariable(key, value);
