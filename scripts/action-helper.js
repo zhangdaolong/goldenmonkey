@@ -29,11 +29,13 @@ const envs = {
 
 envs.CWS_EXT_ID = envs.PRERELEASE ? CWS_EXT_ID_BETA : CWS_EXT_ID_RELEASE;
 envs.SOURCE_ZIP = `${envs.RELEASE_PREFIX}-${envs.VERSION}-source.zip`;
-envs.ASSET_ZIP = `topwar-assistant-v${envs.VERSION}.zip`;
-envs.ASSET_CWS_ZIP = `topwar-assistant-v${envs.VERSION}-mv3.zip`;
-envs.ASSET_CWS_BETA_ZIP = `topwar-assistant-v${envs.VERSION}-mv3-beta.zip`;
-envs.ASSET_SELF_HOSTED_ZIP = `${envs.RELEASE_PREFIX}-webext-ffself-v${envs.VERSION}.zip`;
-envs.ASSET_CRX = `topwar-assistant-v${envs.VERSION}.crx`;
+// MV2 build (Firefox / legacy Chromium)
+envs.ASSET_ZIP = `topwar-assistant-firefox-mv2-v${envs.VERSION}.zip`;
+// MV3 build (Chrome / Edge / Chromium) - load unpacked in chrome://extensions
+envs.ASSET_CWS_ZIP = `topwar-assistant-chrome-v${envs.VERSION}.zip`;
+envs.ASSET_CWS_BETA_ZIP = `topwar-assistant-chrome-v${envs.VERSION}-beta.zip`;
+envs.ASSET_SELF_HOSTED_ZIP = `topwar-assistant-firefox-selfhosted-v${envs.VERSION}.zip`;
+envs.ASSET_CRX = `topwar-assistant-chrome-mv2-v${envs.VERSION}.crx`;
 
 Object.entries(envs).forEach(([key, value]) => {
   core.exportVariable(key, value);
