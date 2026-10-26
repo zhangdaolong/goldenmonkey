@@ -1,15 +1,22 @@
 const pkg = require('../package.json');
 
 /**
- * Derive extension version from pkg.version and pkg.beta fields.
+ * Derive extension version.
  *
- * > manifest.version = `${pkg.version}.${pkg.beta}`
+ * Priority:
+ * 1. process.env.VERSION
+ * 2. the pushed git tag (e.g. `v2.49.7` -> `2.49.7`), so that the GitHub
+ *    release created for the tag is the one that receives the build assets
+ * 3. pkg.version and pkg.beta fields:
+ *    manifest.version = `${pkg.version}.${pkg.beta}`
  */
 function getVersion() {
-  return (
-    process.env.VERSION ||
-    `${pkg.version.match(/\d+\.\d+/)[0]}.${pkg.beta || 0}`
-  );
+  if (process.env.VERSION) return process.env.VERSION;
+  const { GITHUB_REF_TYPE, GITHUB_REF_NAME } = process.env;
+  if (GITHUB_REF_TYPE === 'tag' && /^v\d+(\.\d+)+$/.test(GITHUB_REF_NAME || '')) {
+    return GITHUB_REF_NAME.slice(1);
+  }
+  return `${pkg.version.match(/\d+\.\d+/)[0]}.${pkg.beta || 0}`;
 }
 
 function isBeta() {
