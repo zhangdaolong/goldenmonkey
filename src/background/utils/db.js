@@ -18,6 +18,7 @@ import {
 import { testBlacklist, testerBatch, testScript } from './tester';
 import { getImageData } from './icon';
 import { addOwnCommands, addPublicCommands, commands, init, resolveInit } from './init';
+import { installBuiltinScripts } from './builtin-scripts';
 import { installedOver, NEW_INSTALL } from './on-installed';
 import patchDB from './patch-db';
 import { permissionDownloads } from './permissions';
@@ -213,6 +214,13 @@ export async function initializeDatabase(reset) {
     checkRemove();
   }
   sortScripts();
+  if (installedOver === NEW_INSTALL) {
+    try {
+      await installBuiltinScripts(parseScript, getScript);
+    } catch (err) {
+      console.error(err);
+    }
+  }
   if (!__.MV3) {
     setInterval(checkRemove, TIMEOUT_24HOURS);
   }
