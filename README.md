@@ -1,10 +1,10 @@
-# Goldmonkey
+# Violentmonkey
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/jinjaccalgkegednnccohejagnlnfdag.svg)](https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag)
 [![Firefox Add-ons](https://img.shields.io/amo/v/violentmonkey.svg)](https://addons.mozilla.org/firefox/addon/violentmonkey)
 [![Microsoft Edge Add-on](https://img.shields.io/badge/dynamic/json?label=microsoft%20edge%20add-on&query=%24.version&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Ffgmcfbgljpdcchbllcgecadeonjdcdhp)](https://microsoftedge.microsoft.com/addons/detail/fgmcfbgljpdcchbllcgecadeonjdcdhp)
 
-Goldmonkey 为浏览器提供用户脚本支持。
+Violentmonkey 为浏览器提供用户脚本支持。
 它可运行在支持 [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) 的浏览器上。
 
 
@@ -12,7 +12,7 @@ Goldmonkey 为浏览器提供用户脚本支持。
 
 在 beta 版本之间的变更会自动生成测试构建。你可以将其作为未打包扩展安装到 Chrome 和其他 Chromium 内核浏览器中，或在 Firefox 中作为临时扩展安装。
 
-## 工��流
+## 工作流
 
 ### 开发
 

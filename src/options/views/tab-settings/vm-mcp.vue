@@ -23,7 +23,7 @@
 import { onActivated, onDeactivated, nextTick, reactive, ref } from 'vue';
 import { i18n, sendCmdDirectly } from '@/common';
 
-const GUIDE_URL = 'https://goldmonkey.github.io/guide/ai-agent-access/';
+const GUIDE_URL = 'https://violentmonkey.github.io/guide/ai-agent-access/';
 const $el = ref();
 const state = reactive({ status: 'idle', pending: null, port: null });
 let timer;

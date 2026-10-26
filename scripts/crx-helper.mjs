@@ -13,7 +13,7 @@ const {
   ASSET_CRX,
   ASSETS_DIR = 'dist-assets',
   DIST = 'dist',
-  GITHUB_REPOSITORY = 'zhangdaolong/goldenmonkey',
+  GITHUB_REPOSITORY = 'violentmonkey/violentmonkey',
   TEMP_DIR = 'tmp',
   CRX_MV3,
   CRX_ALLOW_EPHEMERAL_KEY,
@@ -22,7 +22,7 @@ const {
 const version = getVersion();
 
 async function getKeyPath() {
-  const keyPath = join(tmpdir(), 'goldmonkey-crx-key.pem');
+  const keyPath = join(tmpdir(), 'violentmonkey-crx-key.pem');
   if (process.env.CRX_PRIVATE_KEY) {
     await writeFile(keyPath, process.env.CRX_PRIVATE_KEY);
     return keyPath;
@@ -44,7 +44,7 @@ async function getKeyPath() {
 
 async function main() {
   const keyPath = await getKeyPath();
-  const crxName = ASSET_CRX || `goldmonkey-${CRX_MV3 ? 'mv3' : 'mv2'}-v${version}.crx`;
+  const crxName = ASSET_CRX || `violentmonkey-${CRX_MV3 ? 'mv3' : 'mv2'}-v${version}.crx`;
   const crxPath = join(ASSETS_DIR, crxName);
   await mkdir(ASSETS_DIR, { recursive: true });
 
