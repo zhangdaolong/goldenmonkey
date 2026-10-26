@@ -1,29 +1,6 @@
-// SAFETY WARNING! Exports used by `injected` must make ::safe() calls and use __proto__:null
-
-export const CHARSET_UTF8 = 'charset=UTF-8';
-export const FORM_URLENCODED = 'application/x-www-form-urlencoded';
-export const INFERRED = 'inferred';
-export const HOMEPAGE_URL = 'homepageURL';
-export const SUPPORT_URL = 'supportURL';
-
-/** A relaxed check, see METABLOCK_RE description */
-export const USERSCRIPT_META_INTRO = '==UserScript==';
-/** A strictly valid metablock should start at the beginning of the line:
- * "// ==UserScript==" with exactly one \x20 space inside.
- * To match Tampermonkey's relaxed parsing, we allow any preceding text at line start
- * (i.e. not just spaces for indented metablock comments, but literally anything)
- * and inside, but we'll warn about this later in the installer/editor. */
-export const METABLOCK_RE = regex({ disable: { n: true } })`
-# 1          2           3
-  ((?:^|\n)(.*?)\/\/([\x20\t]*)==UserScript==)
-# 4
-  ([\s\S]*?\n)
-# 5  6          7
-  ((.*?)\/\/([\x20\t]*)==\/UserScript==)
-`;
 export const META_STR = 'metaStr';
-export const ESC_GLOB_RE = /[\\.?+[\]{}()|^$]/g;
-export const ESC_STR_RE = /[*\\.?+[\]{}()|^$]/g;
+export const ESC_GLOB_RE = /[\\.?+[{]()}|^$]/g;
+export const ESC_STR_RE = /[*\\.?+[{]()}|^$]/g;
 export const NEWLINE_END_RE = /\n((?!\n)\s)*$/;
 export const WATCH_STORAGE = 'watchStorage';
 
@@ -51,12 +28,12 @@ export const TL_AWAIT = 'topLevelAwait';
 export const UNWRAP = 'unwrap';
 export const FETCH_OPTS = 'fetchOpts';
 export const ERR_BAD_PATTERN = 'Bad pattern';
-export const VM_HOME = 'https://violentmonkey.github.io/';
+export const VM_HOME = 'https://goldmonkey.github.io/';
 export const VM_DOCS_INJECT_INTO = VM_HOME + 'posts/inject-into-context/';
 export const VM_DOCS_MATCHING = VM_HOME + 'api/matching/';
 export const GLOB_ALL = '*://*/*';
 export const FILE_GLOB_ALL = 'file://*/*';
-export const XHR_COOKIE_RE = /:\W+([-\w]+)/; // extracts ://id in Chrome, ://{id} in Firefox
+export const XHR_COOKIE_RE = /:\W+([\-\w]+)/; // extracts ://id in Chrome, ://{id} in Firefox
 /** @type {(str: string, opts?: {}) => Uint8Array} */
 export const U8_fromBase64 = __.INJECTED !== 'injected-web' && Uint8Array.fromBase64;
 export const UPLOAD = 'upload';
@@ -97,10 +74,3 @@ export const kDownloads = 'downloads';
 export const kOrigTag = 'origTag';
 export const kTag = 'tag';
 export const kMainFrame = 'main_frame';
-export const kSubFrame = 'sub_frame';
-export const kContentType = 'content-type';
-export const CACHE_KEYS = 'cacheKeys';
-export const REQ_KEYS = 'reqKeys';
-export const VALUE_IDS = 'valueIds';
-export const PROMISE = 'promise';
-export const TLDJS = '/public/lib/tld.js';
