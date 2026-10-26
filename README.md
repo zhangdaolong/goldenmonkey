@@ -2,7 +2,7 @@
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/jinjaccalgkegednnccohejagnlnfdag.svg)](https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag)
 [![Firefox Add-ons](https://img.shields.io/amo/v/violentmonkey.svg)](https://addons.mozilla.org/firefox/addon/violentmonkey)
-[![Microsoft Edge Add-on](https://img.shields.io/badge/dynamic/json?label=microsoft%20edge%20add-on&query=%24.version&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%3FproductId%3Djbfpobblfmipppbnjgfnjodcekmibkjf)](https://microsoftedge.microsoft.com/addons/detail/jbfpobblfmipppbnjgfnjodcekmibkjf)
+[![Microsoft Edge Add-on](https://img.shields.io/badge/dynamic/json?label=microsoft%20edge%20add-on&query=%24.version&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Ffgmcfbgljpdcchbllcgecadeonjdcdhp)](https://microsoftedge.microsoft.com/addons/detail/fgmcfbgljpdcchbllcgecadeonjdcdhp)
 
 Violentmonkey 为浏览器提供用户脚本支持。
 它可运行在支持 [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) 的浏览器上。
@@ -51,3 +51,14 @@ $ pnpm build:selfHosted
 
 发布流程请参见 [RELEASE](RELEASE.md)。
 
+### 在 Chrome 中安装 Release 产物
+
+1. 打开 [Releases 页面](https://github.com/zhangdaolong/goldenmonkey/releases)。
+2. 下载最新 Release 中的扩展产物压缩包（通常为 `.zip`）。
+3. 将压缩包解压到本地目录。
+4. 在 Chrome 地址栏打开 `chrome://extensions/`。
+5. 打开右上角“开发者模式”。
+6. 点击“加载已解压的扩展程序”，选择第 3 步解压后的目录。
+7. 安装完成后确认扩展已启用。
+
+> 提示：对于未上架 Chrome Web Store 的产物，推荐使用“加载已解压的扩展程序”方式安装。
