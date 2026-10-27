@@ -17,6 +17,8 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    env:
+      TRANSIFEX_TOKEN: ${{ secrets.TRANSIFEX_TOKEN }}
 
     steps:
       - name: Checkout code
@@ -67,7 +69,5 @@ jobs:
         with:
           paths: src
       - name: Upload to Transifex
-        if: steps.changed-path-src.outputs.changed == 'true'
+        if: steps.changed-path-src.outputs.changed == 'true' && env.TRANSIFEX_TOKEN != ''
         run: node scripts/transifex.mjs update
-        env:
-          TRANSIFEX_TOKEN: ${{ secrets.TRANSIFEX_TOKEN }}
